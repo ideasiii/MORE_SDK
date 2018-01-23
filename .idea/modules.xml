@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MORESDK.iml" filepath="$PROJECT_DIR$/MORESDK.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MORE_SDK.iml" filepath="$PROJECT_DIR$/MORE_SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/agent/agent.iml" filepath="$PROJECT_DIR$/agent/agent.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
