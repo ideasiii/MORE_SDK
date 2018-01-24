@@ -3,6 +3,16 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="/Dummy.txt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/RestClient/src/main/java/org/iii/moresdk/restclient/RestClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/agent/src/main/java/org/iii/moresdk/agent/Agent.java">
           <value>
             <set />
