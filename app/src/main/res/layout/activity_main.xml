@@ -7,4 +7,20 @@
     android:layout_height="match_parent"
     tools:context="org.iii.moresdk.MainActivity">
 
+    <Button
+        android:id="@+id/button_https_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HTTPS POST"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp"/>
+
+    <EditText
+        android:id="@+id/editText_msg"
+        android:layout_width="356dp"
+        android:layout_height="240dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        tools:layout_editor_absoluteX="15dp"
+        tools:layout_editor_absoluteY="265dp"/>
 </android.support.constraint.ConstraintLayout>

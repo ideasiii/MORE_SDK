@@ -8,6 +8,31 @@
             <set />
           </value>
         </entry>
+        <entry key="/fragment.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/RestApiClient/src/main/java/org/iii/moresdk/restapiclient/Config.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/RestApiClient/src/main/java/org/iii/moresdk/restapiclient/Https.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/RestApiClient/src/main/java/org/iii/moresdk/restapiclient/Response.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/RestApiClient/src/main/java/org/iii/moresdk/restapiclient/RestApiClient.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/RestClient/src/main/java/org/iii/moresdk/restclient/RestClient.java">
           <value>
             <set />
@@ -24,6 +49,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/src/main/java/org/iii/moresdk/MainActivity.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
           <value>
             <set />
           </value>
