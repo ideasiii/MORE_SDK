@@ -8,8 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/Agent" />
+            <option value="$PROJECT_DIR$/EventListener" />
             <option value="$PROJECT_DIR$/RestApiClient" />
-            <option value="$PROJECT_DIR$/agent" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>

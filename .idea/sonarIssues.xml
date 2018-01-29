@@ -13,6 +13,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/EventListener/src/main/java/org/iii/moresdk/eventlistener/EventListener.java">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/RestApiClient/src/main/java/org/iii/moresdk/restapiclient/Config.java">
           <value>
             <set />

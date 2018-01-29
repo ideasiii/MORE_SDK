@@ -1,1 +1,1 @@
-include ':app', ':agent', ':RestApiClient'
+include ':app', ':Agent', ':RestApiClient', ':EventListener'

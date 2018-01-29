@@ -1,5 +1,8 @@
 package org.iii.moresdk.restapiclient;
 
+import org.iii.moresdk.eventlistener.EventListener;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 
 public class RestApiClient
@@ -40,8 +43,17 @@ public class RestApiClient
         @Override
         public void run()
         {
+            Https.setResponseListener(callback);
             Https.POST(mstrHttpsURL, mHttp_data_type, mParameters, mResponse);
         }
     }
     
+    private EventListener.Callback callback = new EventListener.Callback()
+    {
+        @Override
+        public void onEvent(JSONObject jsonObject)
+        {
+            System.out.println("[RestApiClient] EventListener.Callback: " + jsonObject.toString());
+        }
+    };
 }
