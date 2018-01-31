@@ -11,12 +11,12 @@ import org.iii.moresdk.agent.Agent;
 import org.iii.moresdk.restapiclient.Config;
 import org.iii.moresdk.restapiclient.Response;
 import org.iii.moresdk.restapiclient.RestApiClient;
+import org.json.JSONObject;
 
 import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity
 {
-    private Button btn_https_post = null;
     private EditText et_msg = null;
     private RestApiClient restApiClient = null;
     
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity
         Agent agent = new Agent();
         Log.d("SDK Debug", agent.toString());
         
-        btn_https_post = findViewById(R.id.button_https_post);
+        Button btn_https_post = findViewById(R.id.button_https_post);
         et_msg = findViewById(R.id.editText_msg);
         et_msg.append(agent.toString());
         
@@ -39,10 +39,20 @@ public class MainActivity extends AppCompatActivity
             public void onClick(View v)
             {
                 HashMap<String, String> param = new HashMap<String, String>();
-                param.put("1","a");
+                param.put("1", "a");
                 Response response = new Response();
-                restApiClient.HttpsPost("https://ryejuice.sytes.net/api/test.jsp", Config
-                        .HTTP_DATA_TYPE.X_WWW_FORM, param, response);
+                int nResponse_id = restApiClient.HttpsPost("https://ryejuice.sytes.net/api/test"
+                        + ".jsp", Config.HTTP_DATA_TYPE.X_WWW_FORM, param, response);
+                System.out.println("[MainActivity] onClick https response id: " + nResponse_id);
+            }
+        });
+        
+        restApiClient.setResponseListener(new RestApiClient.ResponseListener()
+        {
+            @Override
+            public void onResponse(JSONObject jsonObject)
+            {
+                System.out.println("[MainActivity] onResponse : " + jsonObject.toString());
             }
         });
     }

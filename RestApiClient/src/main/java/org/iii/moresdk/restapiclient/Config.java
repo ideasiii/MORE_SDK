@@ -6,9 +6,9 @@ package org.iii.moresdk.restapiclient;
 
 public abstract class Config
 {
-    public static final String ENCODING = "UTF-8";
-    public static final int TIME_OUT_CONNECT = 5000;
-    public static final int TIME_OUT_READ = 5000;
+    static final String ENCODING = "UTF-8";
+    static final int TIME_OUT_CONNECT = 5000;
+    static final int TIME_OUT_READ = 5000;
     
     public static enum HTTP_DATA_TYPE
     {
@@ -20,7 +20,7 @@ public abstract class Config
         
         private final String name;
         
-        private HTTP_DATA_TYPE(String s)
+        HTTP_DATA_TYPE(String s)
         {
             name = s;
         }

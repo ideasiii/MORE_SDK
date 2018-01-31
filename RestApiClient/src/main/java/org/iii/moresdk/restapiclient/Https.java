@@ -18,28 +18,27 @@ import javax.net.ssl.HttpsURLConnection;
  * Created by Jugo on 2018/1/25
  */
 
-public class Https
+class Https
 {
     private static EventListener.Callback eventListener = null;
     
-    public static void setResponseListener(EventListener.Callback listener)
+    static void setResponseListener(EventListener.Callback listener)
     {
         eventListener = listener;
     }
     
-    public static int POST(final String httpsURL, final Config.HTTP_DATA_TYPE http_data_type,
-            final HashMap<String, String> parameters, Response response)
+    static void POST(final String httpsURL, final Config.HTTP_DATA_TYPE http_data_type, final
+    HashMap<String, String> parameters, Response response)
     {
-        System.out.println("[Https] POST : URL=" + httpsURL + " Data Type=" + http_data_type
-                .toString());
-        String strParameter = null;
         JSONObject jsonResponse = new JSONObject();
         
         try
         {
+            jsonResponse.put("id", response.Id);
             jsonResponse.put("code", -1);
-            strParameter = getPostDataString(parameters);
-            System.out.println("[Https] POST Parameter:" + strParameter);
+            String strParameter = getPostDataString(parameters);
+            System.out.println("[Https] POST : URL=" + httpsURL + " Data Type=" + http_data_type
+                    .toString() + " Parameter:" + strParameter);
             URL url = new URL(httpsURL);
             HttpsURLConnection con = (HttpsURLConnection) url.openConnection();
             con.setRequestMethod("POST");
@@ -56,7 +55,6 @@ public class Https
             output.close();
             
             response.Code = con.getResponseCode();
-            System.out.println("Resp Code:" + response.Code);
             if (response.Code == HttpsURLConnection.HTTP_OK)
             {
                 response.Data = "";
@@ -66,7 +64,6 @@ public class Https
                 {
                     response.Data += line;
                 }
-                System.out.println("Resp Data:" + response.Data);
             }
             else
             {
@@ -77,13 +74,15 @@ public class Https
         }
         catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            System.out.println("[Https] POST Exception: " + e.getMessage());
         }
+        
         if (null != eventListener)
         {
             eventListener.onEvent(jsonResponse);
         }
-        return response.Code;
+        
+        System.out.println("[Https] POST Response: " + jsonResponse.toString());
     }
     
     private static String getPostDataString(HashMap<String, String> params)

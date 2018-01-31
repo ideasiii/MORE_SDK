@@ -7,8 +7,17 @@ import java.util.HashMap;
 
 public class RestApiClient
 {
-    public RestApiClient()
+    private static int msnSerialNUm = 0;
+    private ResponseListener responseListener = null;
+    
+    public static interface ResponseListener
     {
+        public void onResponse(JSONObject jsonObject);
+    }
+    
+    public void setResponseListener(ResponseListener listener)
+    {
+        responseListener = listener;
     }
     
     public String toString()
@@ -16,12 +25,14 @@ public class RestApiClient
         return "RestApiClient";
     }
     
-    public void HttpsPost(final String httpsURL, final Config.HTTP_DATA_TYPE http_data_type,
-            final HashMap<String, String> parameters, Response response)
+    public int HttpsPost(final String httpsURL, final Config.HTTP_DATA_TYPE http_data_type, final
+    HashMap<String, String> parameters, Response response)
     {
+        response.Id = ++msnSerialNUm;
         Thread thread = new Thread(new HttpsPostRunnable(httpsURL, http_data_type, parameters,
                 response));
         thread.start();
+        return response.Id;
     }
     
     private class HttpsPostRunnable implements Runnable
@@ -31,8 +42,8 @@ public class RestApiClient
         private HashMap<String, String> mParameters;
         private Response mResponse;
         
-        public HttpsPostRunnable(final String httpsURL, final Config.HTTP_DATA_TYPE
-                http_data_type, final HashMap<String, String> parameters, Response response)
+        HttpsPostRunnable(final String httpsURL, final Config.HTTP_DATA_TYPE http_data_type,
+                final HashMap<String, String> parameters, Response response)
         {
             mstrHttpsURL = httpsURL;
             mHttp_data_type = http_data_type;
@@ -54,6 +65,10 @@ public class RestApiClient
         public void onEvent(JSONObject jsonObject)
         {
             System.out.println("[RestApiClient] EventListener.Callback: " + jsonObject.toString());
+            if (null != responseListener)
+            {
+                responseListener.onResponse(jsonObject);
+            }
         }
     };
 }
