@@ -1,29 +1,43 @@
 package org.iii.moresdk;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
+import android.view.ViewGroup;
 import android.widget.EditText;
 
-import org.iii.moresdk.agent.Agent;
-import org.iii.moresdk.restapiclient.Config;
-import org.iii.moresdk.restapiclient.Response;
 import org.iii.moresdk.restapiclient.RestApiClient;
-import org.json.JSONObject;
+import org.iii.moresdk.widget.IndicatorView;
+import org.iii.moresdk.widget.ProgressView;
+import org.iii.moresdk.widget.SwitchButton;
 
-import java.util.HashMap;
-
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends Activity
 {
     private EditText et_msg = null;
     private RestApiClient restApiClient = null;
+    private SwitchButton switchButton = null;
     
-    @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        
+        /* SwitchButton test*/
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams
+                .MATCH_PARENT, 80);
+        switchButton = new SwitchButton(this);
+        switchButton.setLayoutParams(layoutParams);
+        
+        IndicatorView indicatorView = new IndicatorView(this);
+        indicatorView.setLayoutParams(layoutParams);
+        indicatorView.setPosition(100);
+        
+        ProgressView progressView = new ProgressView(this);
+        progressView.setLayoutParams(layoutParams);
+        progressView.setPosition(30);
+        
+        setContentView(progressView);
+        
+        /* // https api test
         setContentView(R.layout.activity_main);
         restApiClient = new RestApiClient();
         Agent agent = new Agent();
@@ -54,6 +68,6 @@ public class MainActivity extends AppCompatActivity
             {
                 System.out.println("[MainActivity] onResponse : " + jsonObject.toString());
             }
-        });
+        });*/
     }
 }

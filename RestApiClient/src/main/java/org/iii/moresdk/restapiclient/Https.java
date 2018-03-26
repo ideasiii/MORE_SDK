@@ -98,11 +98,11 @@ class Https
             }
             else
             {
-                result.append("&");
+                result.append('&');
             }
             
             result.append(URLEncoder.encode(entry.getKey(), Config.ENCODING));
-            result.append("=");
+            result.append('=');
             result.append(URLEncoder.encode(entry.getValue(), Config.ENCODING));
         }
         

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HTTPS POST"
+        android:contentDescription="btn https"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="16dp"/>
 
@@ -23,4 +24,4 @@
         android:inputType="textMultiLine"
         tools:layout_editor_absoluteX="15dp"
         tools:layout_editor_absoluteY="265dp"/>
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

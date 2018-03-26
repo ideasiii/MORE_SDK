@@ -3,10 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Agent/Agent.iml" filepath="$PROJECT_DIR$/Agent/Agent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Common/Common.iml" filepath="$PROJECT_DIR$/Common/Common.iml" />
       <module fileurl="file://$PROJECT_DIR$/EventListener/EventListener.iml" filepath="$PROJECT_DIR$/EventListener/EventListener.iml" />
       <module fileurl="file://$PROJECT_DIR$/MORE_SDK.iml" filepath="$PROJECT_DIR$/MORE_SDK.iml" />
       <module fileurl="file://$PROJECT_DIR$/RestApiClient/RestApiClient.iml" filepath="$PROJECT_DIR$/RestApiClient/RestApiClient.iml" />
       <module fileurl="file://D:\Github\MORE_SDK\RestApiClient\RestClient.iml" filepath="D:\Github\MORE_SDK\RestApiClient\RestClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Widget/Widget.iml" filepath="$PROJECT_DIR$/Widget/Widget.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
